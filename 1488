@@ -1,0 +1,53 @@
+#include <LiquidCrystal.h>
+ 
+constexpr uint8_t PIN_RS = 6;
+constexpr uint8_t PIN_EN = 7;
+constexpr uint8_t PIN_DB4 = 8;
+constexpr uint8_t PIN_DB5 = 9;
+constexpr uint8_t PIN_DB6 = 10;
+constexpr uint8_t PIN_DB7 = 11;
+ 
+LiquidCrystal lcd(PIN_RS, PIN_EN, PIN_DB4, PIN_DB5, PIN_DB6, PIN_DB7);
+int one = 1;
+int two = 1;
+int three = 1;
+int four = 1;
+int first[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+int second[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+int third[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+int foured[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
+void setup() {
+  lcd.begin(16, 2);
+  lcd.setCursor(0, 0);
+  lcd.print("CODE: 1488");
+  lcd.setCursor(0, 1);
+}
+ 
+void loop() {
+
+ 
+  lcd.setCursor(0, 1);
+  lcd.print("                "); // очищаем строку перед печатью новых цифр
+  
+  lcd.setCursor(0, 1);
+  lcd.print("HackCode:");
+  lcd.print(first[one]);
+  lcd.print(" ");
+  lcd.print(second[two]);
+  lcd.print(" ");
+  lcd.print(third[three]);
+  lcd.print(" ");
+  lcd.print(foured[four]);
+  delay(10);
+  if (one == 0 && two == 3 && three == 7 && four == 7)
+  {
+      delay(10000);
+  }
+
+
+
+  one = random(0, 10); // генерация случайного числа от 0 до 9
+  two = random(0, 10); 
+  three = random(0, 10); 
+  four = random(0, 10);  
+}
