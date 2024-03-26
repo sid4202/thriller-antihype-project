@@ -2,13 +2,20 @@
 #define PIN_ECHO 11
 
 long duration, cm;
+int ledPin = 10;
+int ledPin2 = 4;
+int ledPin1 = 7;
 
-void setup() {
+void setup(){
 
 
   Serial.begin (9600);
+  pinMode(ledPin, OUTPUT);
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
   pinMode(PIN_TRIG, OUTPUT);
   pinMode(PIN_ECHO, INPUT);
+  
 }
 
 void loop() {
@@ -28,6 +35,25 @@ void loop() {
   Serial.print("Расстояние до объекта: ");
   Serial.print(cm);
   Serial.println(" см.");
+
+  if(cm <= 50){
+    digitalWrite(ledPin, HIGH);
+  }
+  else{
+    digitalWrite(ledPin, LOW);
+  }
+  if(cm <= 100){
+    digitalWrite(ledPin1, HIGH);
+  }
+  else{
+    digitalWrite(ledPin1, LOW);
+  }
+  if(cm >= 20){
+    digitalWrite(ledPin2, HIGH);
+  }
+  else{
+    digitalWrite(ledPin2, LOW);
+  }
 
   delay(250);
 }
