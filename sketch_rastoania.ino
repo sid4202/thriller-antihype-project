@@ -36,19 +36,19 @@ void loop() {
   Serial.print(cm);
   Serial.println(" см.");
 
-  if(cm <= 50){
+  if(cm <= 30){
     digitalWrite(ledPin, HIGH);
   }
   else{
     digitalWrite(ledPin, LOW);
   }
-  if(cm <= 100){
+  if(cm <= 40){
     digitalWrite(ledPin1, HIGH);
   }
   else{
     digitalWrite(ledPin1, LOW);
   }
-  if(cm >= 20){
+  if(cm >= 10){
     digitalWrite(ledPin2, HIGH);
   }
   else{
