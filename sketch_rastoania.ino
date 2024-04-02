@@ -1,3 +1,4 @@
+#include <Servo.h>
 #define PIN_TRIG 12
 #define PIN_ECHO 11
 
@@ -5,11 +6,13 @@ long duration, cm;
 int ledPin = 10;
 int ledPin2 = 4;
 int ledPin1 = 7;
+Servo servo1;
 
 void setup(){
 
 
   Serial.begin (9600);
+  servo1.attach(2);
   pinMode(ledPin, OUTPUT);
   pinMode(ledPin1, OUTPUT);
   pinMode(ledPin2, OUTPUT);
@@ -54,6 +57,17 @@ void loop() {
   else{
     digitalWrite(ledPin2, LOW);
   }
+
+  
+  if (cm <= 30 and cm <= 40 and cm >= 10){
+    servo1.write(360);
+    delay(200);
+  }
+  else{
+    servo1.write(-360);
+  }
+  
+  
 
   delay(250);
 }
