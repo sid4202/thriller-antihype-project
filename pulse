@@ -1,8 +1,9 @@
+
 int PulseSensorPurplePin = 0;
 int LED7 = 7;
 
 int Signal;
-int Threshold = 550;
+int Threshold = 520;
 
 
 void setup() {
@@ -13,4 +14,12 @@ void setup() {
 
 void loop() {
   Signal = analogRead(PulseSensorPurplePin);
+
+  Serial.println(Signal);
+
+  if(Signal > Threshold) {
+    digitalWrite(LED7, HIGH);
+  } else {
+    digitalWrite(LED7, LOW);
+  }
 }
