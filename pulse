@@ -1,4 +1,3 @@
-
 int PulseSensorPurplePin = 0;
 int LED7 = 7;
 
