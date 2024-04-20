@@ -60,11 +60,11 @@ void loop() {
 
   
   if (cm <= 30 and cm <= 40 and cm >= 10){
-    servo1.write(360);
+    servo1.write(90);
     delay(200);
   }
   else{
-    servo1.write(-360);
+    servo1.write(-90);
   }
   
   
