@@ -51,7 +51,7 @@ void loop() {
   else{
     digitalWrite(ledPin1, LOW);
   }
-  if(cm >= 10){
+  if(cm >= 25){
     digitalWrite(ledPin2, HIGH);
   }
   else{
@@ -59,7 +59,7 @@ void loop() {
   }
 
   
-  if (cm <= 30 and cm <= 40 and cm >= 10){
+  if (cm <= 30 and cm <= 40 and cm >= 25){
     servo1.write(90);
     delay(200);
   }
